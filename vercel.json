@@ -11,5 +11,12 @@
             "src": "/.*",
             "dest": "app.py"
         }
-    ]
+    ],
+    "env": {
+        "APP_MODULE": "app:app",
+        "APP_MODULE_NAME": "app"
+    },
+    "scripts": {
+        "start": "gunicorn $APP_MODULE_NAME:$APP_MODULE"
+    }
 }
